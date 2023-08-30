@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    background-color: var(--color);
+    width: 100vw;
+    min-height: 100vh;
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --color: #eee;
+}
+
+header {
+    padding: 15px;
+}
+
+header h1 {
+    text-align: center;
+}
+
+article {
+    margin: auto;
+    width: 95%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    background-color: #3d3a3a;
+    padding: 30px;
+}
+
+form label {
+    display: flex;
+    width: 40%;
+    flex-flow: column;
+    max-width: 200px;
+    color: #c6bfbf;
+}
+
+fieldset {
+    width: 70%;
+    border: #eee solid 1px;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: calc(550px);
+
+}
+
+form label span {
+    padding: 5px 0;
+}
+
+button {
+    width: 80px;
+    height: 35px;
+    border: none;
+    border-radius: 7px;
+}
+
+form button {
+    background-color: rgb(61, 166, 64);
+    color: #eee;
+}
+
+form input {
+    border-radius: 7px;
+    border: 1px solid #000;
+    max-width: 150px;
+    height: 25px;
+    line-height: 25px;
+    padding: 2px;
+}
+
+section {
+    width: 30%;
+    padding: 15px;
+    text-align: center;
+}
+
+.mayor {
+    list-style: none;
+    padding: 0;
+    height: 100%;
+    border: 10px 10px 5px lightblue;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px lightblue;
+}
+
+.medio {
+    background-color: #c6bfbf;
+    border: 1px solid #3d3a3a;
+    border-radius: 7px;
+    padding: 5px;
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+    justify-content: space-between;
+    height: 111px;
+}
+
+.medio p {
+    margin: 5px 0;
+    text-align: left;
+}
+
+.medio button {
+    width: 100px;
+    height: unset;
+    background-color: #992424;
+    color: #fff;
+    cursor: pointer;
+}
