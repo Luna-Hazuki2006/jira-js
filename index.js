@@ -22,6 +22,14 @@ class Actividad {
     }
 }
 
+function minimo() {
+    let tiempo = document.getElementById('tiempo')
+    let min = tiempo.value
+    console.log(min);
+}
+
+minimo()
+
 function pendientes() {
     const data = new FormData(forma)
     let nombre = data.get('nombre')
