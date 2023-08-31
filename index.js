@@ -24,8 +24,14 @@ class Actividad {
 
 function minimo() {
     let tiempo = document.getElementById('tiempo')
-    let min = tiempo.value
-    console.log(min);
+    const actual = new Date();
+    let dia = actual.getDate()
+    let año = actual.getFullYear()
+    let mes = actual.getMonth() + 1
+    if (mes < 10) {
+        mes = '0' + mes
+    }
+    tiempo.setAttribute('min', año + '-' + mes + '-' + dia)
 }
 
 minimo()
