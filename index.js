@@ -55,6 +55,8 @@ function borrar(boton) {
 function enEjecucion(evento) {
     evento.preventDefault();
     let id = evento.dataTransfer.getData("text");
+    // let tarea = document.getElementById(id)
+    // tarea.classList.remove('levitar')
     for (const este of actividades) {
         if (este.id == id && este.estatus == 'A') {
             este.categoria = "En ejecución"
@@ -73,7 +75,7 @@ function llenarListas() {
             continue
         }
         pendiente.innerHTML += `
-        <div class="medio" id="${esto.id}" draggable="true" ondragstart="drag(event)">
+        <div class="medio" id="${esto.id}" ondragged="pasado(this)" draggable="true" ondragstart="drag(event)" ondrag="cambio(this)">
             <div class="info">
                 <p>Creada: ${esto.fechaCreacion}</p> <!-- Fecha de creación de la actividad (en formato fecha)-->
                 <p>Actividad: ${esto.nombre}</p> <!-- Actividad ingresada en el formulario -->
@@ -88,7 +90,7 @@ function llenarListas() {
             continue
         }
         ejecutando.innerHTML += `
-        <div class="medio" id="${esto.id}" draggable="true" ondragstart="drag(event)">
+        <div class="medio" id="${esto.id}" ondragged="pasado(this)" draggable="true" ondragstart="drag(event)" ondrag="cambio(this)">
             <div class="info">
                 <p>Desde: ${esto.fechaCreacion}</p><!-- Fecha desde que se esta ejecutando la actividad de la actividad (en formato fecha)-->
                 <p>Actividad: ${esto.nombre}</p>
@@ -134,6 +136,7 @@ function dejarPendiente(evento) {
     evento.preventDefault();
     let id = evento.dataTransfer.getData("text");
     // let tarea = document.getElementById(id)
+    // tarea.classList.add('levitar')
     for (const este of actividades) {
         if (este.id == id && este.estatus == 'A') {
             este.categoria = "Pendiente"
@@ -152,8 +155,22 @@ function finalizar(evento) {
             este.categoria = "Realizada"
         }
     }
+    // tarea.classList.add('levitar')
     // tarea.removeAttribute('draggable')
     // tarea.removeAttribute('ondragstart')
     // evento.target.appendChild(tarea);
     llenarListas()
+}
+
+function cambio(tarea) {
+    // let id = evento.dataTransfer.getData("text");
+    // console.log(id);
+    console.log(tarea);
+    tarea.classList.add('levitar')
+    tarea.classList.remove('medio')
+}
+
+function pasado(tarea) {
+    tarea.classList.remove('levitar')
+    tarea.classList.add('medio')
 }

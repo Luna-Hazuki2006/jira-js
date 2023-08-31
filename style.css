@@ -45,6 +45,7 @@ fieldset {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
+    border-radius: 5px;
     justify-content: center;
     max-width: calc(550px);
 
@@ -85,9 +86,9 @@ section {
     list-style: none;
     padding: 0;
     height: 100%;
-    border: 10px 10px 5px lightblue;
+    /* border: 10px 10px 10px 5px lightblue; */
     border-radius: 5px;
-    box-shadow: 10px 10px 5px lightblue;
+    box-shadow: -10px 10px 5px lightblue;
 }
 
 .medio {
@@ -100,6 +101,29 @@ section {
     margin: 10px 0;
     justify-content: space-between;
     height: 111px;
+}
+
+.levitar {
+    background-color: gray;
+    color: gainsboro;
+    border-radius: 7px;
+    padding: 5px;
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+    justify-content: space-between;
+    height: 111px;
+}
+
+.levitar button {
+    background-color: #3d3a3a;
+    width: 100px;
+    height: unset;
+}
+
+.levitar p {
+    margin: 5px 0;
+    text-align: left;
 }
 
 .medio p {
