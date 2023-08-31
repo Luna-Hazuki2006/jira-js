@@ -5,7 +5,8 @@ body {
     min-height: 100vh;
     font-size: 12px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    --color: #eee;
+    --color: ;
+
 }
 
 header {
@@ -137,4 +138,43 @@ section {
     background-color: #992424;
     color: #fff;
     cursor: pointer;
+}
+
+.texto {
+    animation-name: arcoiris;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.rojo {
+    color: red;
+}
+
+
+
+@keyframes arcoiris {
+    0% {
+        color: red;
+    }
+    14% {
+        color: orange;
+    }
+    28% {
+        color: yellow;
+    }
+    42% {
+        color: green;
+    }
+    56% {
+        color: blue;
+    } 
+    70% {
+        color: indigo;
+    }
+    84% {
+        color: violet;
+    }
+    100% {
+        color: red;
+    }
 }

@@ -63,6 +63,7 @@ function enEjecucion(evento) {
         }
     }
     llenarListas()
+    descoloridos()
 }
 
 
@@ -105,7 +106,7 @@ function llenarListas() {
             continue
         }
         realizada.innerHTML += `
-        <div class="medio" id="${esto.id}">
+        <div class="medio" id="${esto.id}" ondragged="pasado(this)">
             <div class="info">
                 <p>Creada: ${esto.fechaCreacion}</p><!-- Fecha de creación de la actividad (en formato fecha)-->
                 <p>Fecha fin: ${esto.fechaFin}</p><!-- Fecha en la culmino la actividad de la actividad (en formato fecha)-->
@@ -143,6 +144,7 @@ function dejarPendiente(evento) {
         }
     }
     llenarListas()
+    descoloridos()
 }
 
 function finalizar(evento) {
@@ -160,17 +162,39 @@ function finalizar(evento) {
     // tarea.removeAttribute('ondragstart')
     // evento.target.appendChild(tarea);
     llenarListas()
+    descoloridos()
 }
 
-function cambio(tarea) {
+async function cambio(tarea) {
     // let id = evento.dataTransfer.getData("text");
     // console.log(id);
-    console.log(tarea);
     tarea.classList.add('levitar')
     tarea.classList.remove('medio')
+    coloridos()
+    // texto.classList.toggle('texto')
+    // texto.classList.toggle('rojo')
 }
 
-function pasado(tarea) {
+async function pasado(tarea) {
     tarea.classList.remove('levitar')
     tarea.classList.add('medio')
+    descoloridos()
+    // setTimeout(() => console.log('>:v'), 4000)
+    // descoloridos()
+    // texto.classList.toggle('texto')
+    // texto.classList.toggle('rojo')
+}
+
+function coloridos() {
+    let textos = document.getElementsByTagName('h1')
+    for (const texto of textos) {
+        texto.classList.add('texto')
+    }
+}
+
+function descoloridos() {
+    let textos = document.getElementsByTagName('h1')
+    for (const texto of textos) {
+        texto.classList.remove('texto')
+    }
 }
